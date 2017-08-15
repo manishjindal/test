@@ -21,7 +21,7 @@ def fail(msg) {
 	build.setResult(Result.FAILURE)
 }
 
-if (!(action in ['Create','Delete'})) {
+if (!(action in ['Create','Delete'])) {
 	println "Unrecognized branch action '$action'"
 	return false
 }
