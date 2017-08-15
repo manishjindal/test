@@ -7,12 +7,14 @@ import hudson.FilePath
 
 println "Running BranchAction.dsl"
 
-def action = env.${Action}	// branch action (Create/Delete)
-def source = env.${Source}	// source branch (required for Create)
-def projects = env.${Projects}
-def branch = env.${Branch}	// branch to create or delete
-def archive = env.${Archive}	// true/false tag branch before deleting
-def desc = env.${Description}
+def action = ${env.Action}	// branch action (Create/Delete)
+def source = ${env.Source}	// source branch (required for Create)
+def projects = ${env.Projects}
+def branch = ${env.Branch}	// branch to create or delete
+def archive = ${env.Archive}	// true/false tag branch before deleting
+def desc = ${env.Description}
+
+
 
 def fail(msg) {
 	println msg
@@ -42,7 +44,7 @@ if (!branch) {
 	return false
 }
 if (action == 'Delete' && branch in ['integration','master']) {
-	println "No! I refuse to delete ${branch}! Why would you ask me to do this?"
+	println "No! I refuse to  Why would you ask me to do this?"
 	return false
 }
 
