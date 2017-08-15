@@ -45,3 +45,5 @@ if (action == 'Delete' && branch in ['integration','master']) {
 	println "No! I refuse to delete ${branch}! Why would you ask me to do this?"
 	return false
 }
+
+print "exiting now."
