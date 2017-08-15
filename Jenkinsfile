@@ -7,7 +7,7 @@ import hudson.FilePath
 
 println "Running BranchAction.dsl"
 
-def action = env.${Action'}	// branch action (Create/Delete)
+def action = env.${Action}	// branch action (Create/Delete)
 def source = env.${Source}	// source branch (required for Create)
 def projects = env.${Projects}
 def branch = env.${Branch}	// branch to create or delete
