@@ -19,33 +19,33 @@ def desc = env[Description]
 def fail(msg) {
 	println msg
 	build.setResult(Result.FAILURE)
-]
+}
 
-if (!(action in ['Create','Delete'])) {
+if (!(action in ['Create','Delete'})) {
 	println "Unrecognized branch action '$action'"
 	return false
-]
+}
 
 if (action == 'Create' && !desc) {
 	fail ("Please provide a short Description for the new Branch")
 	return
-]
+}
 
 if (!source) {
 	if (action == 'Create') {
 		println "Branch creation requires a Source branch"
 		return false
-	] else {
+	} else {
 		source = 'N/A'
-	]
-]
+	}
+}
 if (!branch) {
 	println "Branch name must be provided"
 	return false
-]
+}
 if (action == 'Delete' && branch in ['integration','master']) {
 	println "No! I refuse to  Why would you ask me to do this?"
 	return false
-]
+}
 
 print "exiting now."
