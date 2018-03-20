@@ -11,7 +11,7 @@ node('docker&&linux') {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        app = docker.build("manishjindal/myflaskapp-forminikube")
+        app = docker.build("mjindal/testci-cd")
     }
 
     stage('Test image') {
